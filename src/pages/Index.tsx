@@ -305,7 +305,7 @@ const Index = () => {
           </p>
           <div className="animate-fade-in-delay-2 max-w-4xl mx-auto w-full">
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 md:p-10 min-h-[200px] md:min-h-[280px] flex items-center justify-center">
-              <p className="text-white/40 text-sm">Место для баннера — загрузите изображение</p>
+              <p className="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/1c220569-b0f7-4a9f-897e-68107e37269a.jpg">Место для баннера — загрузите изображение</p>
             </div>
           </div>
         </div>
