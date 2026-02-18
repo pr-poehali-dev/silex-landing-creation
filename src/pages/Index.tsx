@@ -321,7 +321,7 @@ const Index = () => {
                     { emoji: '🛡️', text: 'Утеплители' },
                     { emoji: '🏗️', text: 'Сухие смеси' },
                     { emoji: '⚙️', text: 'ЖБИ' },
-                    { emoji: '🪵', text: 'Пиломатериалы' },
+                    { emoji: '🏭', text: 'Асбестоцементные изделия' },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-1.5 flex-1 justify-center min-w-0 px-1">
                       <span className="text-xl md:text-2xl flex-shrink-0">{item.emoji}</span>
