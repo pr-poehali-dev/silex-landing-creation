@@ -306,26 +306,13 @@ const Index = () => {
             <br />
             <span className="text-[#E67E22]">Дом, который дышит и греет</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto mb-4 animate-fade-in-delay-1">
+          <p className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto mb-8 animate-fade-in-delay-1">
             Гарантия качества в каждом блоке
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2 mt-10">
-            <Button
-              size="lg"
-              className="bg-[#E67E22] hover:bg-[#d35400] text-white text-lg px-8 py-6 font-semibold"
-              onClick={() => scrollTo('callback')}
-            >
-              <Icon name="FileText" size={20} className="mr-2" />
-              Получить расчёт за 60 минут
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#1E3A5F] text-lg px-8 py-6 font-semibold bg-transparent"
-              onClick={() => scrollTo('categories')}
-            >
-              Смотреть каталог
-            </Button>
+          <div className="animate-fade-in-delay-2 max-w-4xl mx-auto w-full">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 md:p-10 min-h-[200px] md:min-h-[280px] flex items-center justify-center">
+              <p className="text-white/40 text-sm">Место для баннера — загрузите изображение</p>
+            </div>
           </div>
         </div>
 
