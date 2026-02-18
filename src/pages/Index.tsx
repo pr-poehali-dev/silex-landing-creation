@@ -219,17 +219,11 @@ const Index = () => {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
         <div className="max-w-[1200px] mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-[#1E3A5F] flex items-center justify-center">
-              <span className="text-white font-bold text-lg" style={{ fontFamily: 'Montserrat' }}>В</span>
-            </div>
-            <div>
-              <span className={`font-bold text-lg tracking-tight ${headerScrolled ? 'text-[#1E3A5F]' : 'text-white'}`} style={{ fontFamily: 'Montserrat' }}>
-                ВИС
-              </span>
-              <span className={`block text-[10px] leading-tight ${headerScrolled ? 'text-[#333]/60' : 'text-white/70'}`}>
-                Восток-ИнвестСталь
-              </span>
-            </div>
+            <img
+              src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/b7e4dd2d-de05-4a2e-b0d5-bcf1064e0acc.png"
+              alt="ВИС"
+              className="h-12 md:h-14 w-auto"
+            />
           </div>
 
           <nav className="hidden lg:flex items-center gap-6">
@@ -717,14 +711,12 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg" style={{ fontFamily: 'Montserrat' }}>В</span>
-                </div>
-                <div>
-                  <span className="font-bold text-lg tracking-tight" style={{ fontFamily: 'Montserrat' }}>ВИС</span>
-                  <span className="block text-[10px] text-white/50">Восток-ИнвестСталь</span>
-                </div>
+              <div className="mb-4">
+                <img
+                  src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/b7e4dd2d-de05-4a2e-b0d5-bcf1064e0acc.png"
+                  alt="ВИС"
+                  className="h-14 w-auto brightness-0 invert"
+                />
               </div>
               <p className="text-white/50 text-sm leading-relaxed">
                 Комплексное снабжение строительных объектов на Дальнем Востоке с 2003 года.
