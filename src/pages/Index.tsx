@@ -309,10 +309,7 @@ const Index = () => {
           <p className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto mb-4 animate-fade-in-delay-1">
             Гарантия качества в каждом блоке
           </p>
-          <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-in-delay-2">
-            Более 500 наименований стройматериалов на складе 5 000 м². Поставки по всему Дальнему Востоку.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2 mt-10">
             <Button
               size="lg"
               className="bg-[#E67E22] hover:bg-[#d35400] text-white text-lg px-8 py-6 font-semibold"
