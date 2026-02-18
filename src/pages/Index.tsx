@@ -323,7 +323,7 @@ const Index = () => {
                     { emoji: '⚙️', text: 'ЖБИ' },
                     { emoji: '🏭', text: 'Асбестоцементные изделия' },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-1.5 flex-1 justify-center min-w-0 px-1">
+                    <div key={i} className="flex items-center gap-1.5 flex-1 justify-center min-w-0 px-0 rounded-0">
                       <span className="text-xl md:text-2xl flex-shrink-0">{item.emoji}</span>
                       <span className="text-white/90 md:text-sm font-medium truncate px-0 mx-0 my-0 text-xs">{item.text}</span>
                     </div>
