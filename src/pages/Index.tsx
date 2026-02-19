@@ -210,10 +210,11 @@ const Index = () => {
       backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9a25da5c-3529-4b35-a7a4-93b7d2a31757.jpg',
     },
     {
-      frontImage: HERO_IMG,
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/0396780e-168b-4294-b4ed-e7cff80588c2.jpg',
       frontTitle: 'Клей для газобетона',
-      backTitle: 'Клей для газобетона',
-      backDescription: 'Специализированный клеевой состав для кладки газобетонных блоков. Тонкий шов, прочное соединение.',
+      backTitle: '',
+      backDescription: '',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/4ef59985-b755-4c2e-afed-91b94a402701.jpg',
     },
   ];
 
@@ -422,7 +423,7 @@ const Index = () => {
               Наведите на карточку, чтобы узнать подробности
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {categories.map((cat, i) => (
               <div key={i} className="scroll-animate" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <FlipCard {...cat} />
