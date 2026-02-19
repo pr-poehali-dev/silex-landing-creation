@@ -167,8 +167,8 @@ const Index = () => {
   ];
 
   const services = [
-    { icon: 'Train', title: 'Ж/Д тупик', description: 'Собственный железнодорожный тупик для приёмки вагонов с материалами' },
-    { icon: 'Truck', title: 'Доставка', description: 'Доставка по Приморью и Дальнему Востоку собственным автопарком' },
+    { icon: 'Train', title: 'Ж/Д тупик', description: 'Собственный железнодорожный тупик для приёмки вагонов и контейнеров' },
+    { icon: 'Truck', title: 'Доставка', description: 'Доставка по Приморью и Дальнему Востоку' },
     { icon: 'Calculator', title: 'Расчёт материалов', description: 'Бесплатная помощь в расчёте необходимого количества материалов' },
     { icon: 'RefreshCw', title: 'Бесперебойная поставка', description: 'Стабильные поставки на объект по согласованному графику' },
   ];
@@ -182,7 +182,7 @@ const Index = () => {
       backImage: HERO_IMG,
     },
     {
-      frontImage: HERO_IMG,
+      frontImage: https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/191fdc37-1bd8-493c-a840-a55014dc05c6.jpgO_IMG,
       frontTitle: 'Магазин «Парус»',
       backTitle: 'ТЦ «Парус»',
       backDescription: 'Полное снабжение строительными материалами торгового центра площадью 12 000 м².',
