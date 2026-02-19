@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -129,8 +130,8 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
         </div>
       </div>
 
-      {modalOpen && isImageBack && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => { setModalOpen(false); setFlipped(false); }}>
+      {modalOpen && isImageBack && createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => { setModalOpen(false); setFlipped(false); }}>
           <div className="relative" onClick={(e) => e.stopPropagation()}>
             <img
               src={backImage}
@@ -145,7 +146,8 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
               <Icon name="X" size={18} />
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
