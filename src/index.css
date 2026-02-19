@@ -115,6 +115,7 @@
 
   .flip-card {
     perspective: 1000px;
+    min-width: 220px;
   }
 
   .flip-card-inner {
