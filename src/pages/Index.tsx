@@ -182,32 +182,31 @@ const Index = () => {
 
   const categories = [
     {
-      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/fd8a3061-bf3f-4775-9aa9-8f331c6243d3.jpg',
-      frontTitle: '100 × 250 × 625 мм',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/7634b7cf-41ed-4868-8119-6090882b9037.jpg',
+      frontTitle: '200 × 250 × 625 мм',
       backTitle: '',
       backDescription: '',
-      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/d42f2e59-6ea0-41ce-8220-b828ab3a7efc.jpg',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/6c442eeb-d949-4a79-a162-403edfab9204.jpg',
     },
     {
-      frontImage: WAREHOUSE_IMG,
-      frontTitle: 'Кирпич',
-      backTitle: 'Кирпич строительный',
-      backDescription: 'Керамический и силикатный кирпич для несущих стен, облицовки и внутренних перегородок.',
-      backImage: WAREHOUSE_IMG,
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/29fc215d-a94d-4a7b-ac64-1838ad2dadc8.jpg',
+      frontTitle: '300 × 250 × 625 мм',
+      backTitle: '',
+      backDescription: '',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/5c1754e7-fc31-4e8f-915d-5c62d85e21d1.jpg',
+    },
+    {
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/25afee99-2cb5-4c28-8225-603262838dc1.jpg',
+      frontTitle: '400 × 250 × 625 мм',
+      backTitle: '',
+      backDescription: '',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9a25da5c-3529-4b35-a7a4-93b7d2a31757.jpg',
     },
     {
       frontImage: HERO_IMG,
-      frontTitle: 'Утеплители',
-      backTitle: 'Теплоизоляция',
-      backDescription: 'Минеральная вата, пенополистирол, XPS. Сохранение тепла и снижение расходов на отопление.',
-      backImage: HERO_IMG,
-    },
-    {
-      frontImage: PROJECT_IMG,
-      frontTitle: 'Сухие смеси и ЖБИ',
-      backTitle: 'Смеси и ЖБИ',
-      backDescription: 'Штукатурные и кладочные смеси, железобетонные изделия. Всё для монолитного строительства.',
-      backImage: PROJECT_IMG,
+      frontTitle: 'Клей для газобетона',
+      backTitle: 'Клей для газобетона',
+      backDescription: 'Специализированный клеевой состав для кладки газобетонных блоков. Тонкий шов, прочное соединение.',
     },
   ];
 
