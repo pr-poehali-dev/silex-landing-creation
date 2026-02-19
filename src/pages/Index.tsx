@@ -85,23 +85,21 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
             <h3 className="text-white font-bold text-lg">{frontTitle}</h3>
           </div>
         </div>
-        <div className="flip-card-back shadow-lg" style={{
-          backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
-          backgroundColor: backImage ? undefined : '#1E3A5F',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+        <div className="flip-card-back shadow-lg overflow-hidden" style={{
+          backgroundColor: backImage && !backTitle ? undefined : '#1E3A5F',
         }}>
-          <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center">
-            <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
-            <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
-            <Button
-              variant="outline"
-              className="mt-4 bg-white border-white text-[#1E3A5F] font-semibold hover:bg-[#E67E22] hover:border-[#E67E22] hover:text-white active:bg-[#E67E22] active:border-[#E67E22] active:text-white transition-colors"
-              size="sm"
-            >
-              Подробнее
-            </Button>
-          </div>
+          {backImage && !backTitle ? (
+            <img src={backImage} alt="Характеристики" className="w-full h-full object-contain bg-white" />
+          ) : (
+            <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center" style={{
+              backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}>
+              <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
+              <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -137,11 +135,11 @@ const Index = () => {
 
   const categories = [
     {
-      frontImage: BLOCKS_IMG,
-      frontTitle: 'Газобетонные блоки',
-      backTitle: 'Газобетон',
-      backDescription: 'Автоклавный газобетон D400–D600. Точная геометрия, минимальный расход клея. Идеально для стен и перегородок.',
-      backImage: BLOCKS_IMG,
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/fd8a3061-bf3f-4775-9aa9-8f331c6243d3.jpg',
+      frontTitle: '100 × 250 × 625 мм',
+      backTitle: '',
+      backDescription: '',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/d42f2e59-6ea0-41ce-8220-b828ab3a7efc.jpg',
     },
     {
       frontImage: WAREHOUSE_IMG,
