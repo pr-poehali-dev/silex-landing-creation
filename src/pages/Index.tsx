@@ -76,68 +76,33 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
   backDescription: string;
   backImage?: string;
 }) {
-  const [zoomed, setZoomed] = useState(false);
-  const isImageBack = backImage && !backTitle;
-
-  const handleBackClick = (e: React.MouseEvent) => {
-    if (isImageBack) {
-      e.stopPropagation();
-      setZoomed(true);
-    }
-  };
-
   return (
-    <>
-      <div className="flip-card h-[320px] md:h-[360px] cursor-pointer">
-        <div className="flip-card-inner">
-          <div className="flip-card-front bg-white shadow-lg">
-            <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
-            <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/70 to-transparent p-4">
-              <h3 className="text-white font-bold text-lg text-center">{frontTitle}</h3>
+    <div className="flip-card h-[320px] md:h-[360px] cursor-pointer">
+      <div className="flip-card-inner">
+        <div className="flip-card-front bg-white shadow-lg">
+          <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-5">
+            <h3 className="text-white font-bold text-lg">{frontTitle}</h3>
+          </div>
+        </div>
+        <div className="flip-card-back shadow-lg overflow-hidden" style={{
+          backgroundColor: backImage && !backTitle ? undefined : '#1E3A5F',
+        }}>
+          {backImage && !backTitle ? (
+            <img src={backImage} alt="Характеристики" className="w-full h-full object-contain bg-white" />
+          ) : (
+            <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center" style={{
+              backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}>
+              <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
+              <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
             </div>
-          </div>
-          <div
-            className="flip-card-back shadow-lg overflow-hidden"
-            style={{ backgroundColor: isImageBack ? undefined : '#1E3A5F' }}
-            onClick={handleBackClick}
-          >
-            {isImageBack ? (
-              <img src={backImage} alt="Характеристики" className="w-full h-full object-contain bg-white" />
-            ) : (
-              <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center" style={{
-                backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}>
-                <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
-                <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
-              </div>
-            )}
-          </div>
+          )}
         </div>
       </div>
-
-      {zoomed && isImageBack && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm cursor-pointer"
-          onClick={() => setZoomed(false)}
-        >
-          <img
-            src={backImage}
-            alt="Характеристики"
-            className="rounded-xl shadow-2xl animate-in zoom-in-50 duration-300"
-            style={{ width: '680px', maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain' }}
-            onClick={(e) => e.stopPropagation()}
-          />
-          <button
-            className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors"
-            onClick={() => setZoomed(false)}
-          >
-            <Icon name="X" size={32} />
-          </button>
-        </div>
-      )}
-    </>
+    </div>
   );
 }
 
