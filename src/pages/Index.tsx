@@ -182,6 +182,13 @@ const Index = () => {
 
   const categories = [
     {
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/0d3a3da2-bdd0-4b4b-9cbf-bafb90bde9f9.jpg',
+      frontTitle: '100 × 250 × 625 мм',
+      backTitle: '',
+      backDescription: '',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/5405b939-cb36-4587-af76-d17ca0398a8a.jpg',
+    },
+    {
       frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/7634b7cf-41ed-4868-8119-6090882b9037.jpg',
       frontTitle: '200 × 250 × 625 мм',
       backTitle: '',
