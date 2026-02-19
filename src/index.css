@@ -153,6 +153,80 @@
   }
 }
 
+@keyframes bannerRollIn {
+  0% {
+    transform: translateX(-120%) rotate(-15deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(5%) rotate(2deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-2%) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.banner-roll-in {
+  animation: bannerRollIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  opacity: 0;
+}
+
+.banner-flip-container {
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.banner-flip-inner {
+  position: relative;
+  width: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.banner-flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.banner-flip-front,
+.banner-flip-back {
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.banner-flip-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+@keyframes confettiPop {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  animation: confettiPop 1.2s ease-out forwards;
+  pointer-events: none;
+  z-index: 50;
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -157,6 +157,8 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
+  const [bannerFlipped, setBannerFlipped] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
   const containerRef = useScrollAnimation();
 
   useEffect(() => {
@@ -355,9 +357,50 @@ const Index = () => {
           <p className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto mb-8 animate-fade-in-delay-1">
             Гарантия качества в каждом блоке
           </p>
-          <div className="animate-fade-in-delay-2 max-w-4xl mx-auto w-full">
-            <div className="rounded-2xl overflow-hidden">
-              <img src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/241760fa-144b-4952-bb7d-9be11b2e5f95.jpg" alt="Акция — газобетон 13 150 руб. м³, бесплатное зимнее хранение" className="w-full h-auto object-cover" />
+          <div className="banner-roll-in max-w-4xl mx-auto w-full">
+            <div
+              className="banner-flip-container relative"
+              onClick={() => {
+                setBannerFlipped(!bannerFlipped);
+                if (!bannerFlipped) {
+                  const container = bannerRef.current;
+                  if (container) {
+                    const rect = container.getBoundingClientRect();
+                    const colors = ['#E67E22', '#1E3A5F', '#FFD700', '#FF4444', '#44FF44', '#FF44FF', '#44FFFF', '#FFFFFF'];
+                    for (let i = 0; i < 40; i++) {
+                      const confetti = document.createElement('div');
+                      confetti.className = 'confetti-piece';
+                      confetti.style.left = `${rect.width / 2}px`;
+                      confetti.style.top = `${rect.height / 2}px`;
+                      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                      const angle = (Math.random() * 360) * (Math.PI / 180);
+                      const distance = 80 + Math.random() * 250;
+                      const tx = Math.cos(angle) * distance;
+                      const ty = Math.sin(angle) * distance - Math.random() * 150;
+                      const rot = Math.random() * 720 - 360;
+                      const scale = 0.5 + Math.random() * 1.5;
+                      confetti.style.animation = `confettiPop ${0.8 + Math.random() * 0.6}s ease-out forwards`;
+                      confetti.style.transform = `translate(0,0) rotate(0deg) scale(${scale})`;
+                      confetti.animate([
+                        { transform: `translate(0,0) rotate(0deg) scale(${scale})`, opacity: 1 },
+                        { transform: `translate(${tx}px,${ty}px) rotate(${rot}deg) scale(0)`, opacity: 0 }
+                      ], { duration: 800 + Math.random() * 600, easing: 'cubic-bezier(0.25,0.46,0.45,0.94)', fill: 'forwards' });
+                      container.appendChild(confetti);
+                      setTimeout(() => confetti.remove(), 1500);
+                    }
+                  }
+                }
+              }}
+              ref={bannerRef}
+            >
+              <div className={`banner-flip-inner ${bannerFlipped ? 'flipped' : ''}`}>
+                <div className="banner-flip-front">
+                  <img src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/241760fa-144b-4952-bb7d-9be11b2e5f95.jpg" alt="Акция — газобетон 13 150 руб. м³" className="w-full h-auto object-cover rounded-2xl" />
+                </div>
+                <div className="banner-flip-back">
+                  <img src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/57727bda-9c18-43a4-a5c0-b9d6e85c337b.jpg" alt="Акции и предложения" className="w-full h-auto object-cover rounded-2xl" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
