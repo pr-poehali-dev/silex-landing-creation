@@ -76,74 +76,68 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
   backDescription: string;
   backImage?: string;
 }) {
-  const [flipped, setFlipped] = useState(false);
   const [zoomed, setZoomed] = useState(false);
   const isImageBack = backImage && !backTitle;
 
-  const handleMouseEnterBack = () => {
-    if (isImageBack) setZoomed(true);
-  };
-
-  const handleMouseLeaveCard = () => {
-    setZoomed(false);
-    setFlipped(false);
+  const handleBackClick = (e: React.MouseEvent) => {
+    if (isImageBack) {
+      e.stopPropagation();
+      setZoomed(true);
+    }
   };
 
   return (
-    <div
-      className="flip-card h-[320px] md:h-[360px] cursor-pointer"
-      style={{ zIndex: zoomed ? 20 : 1 }}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={handleMouseLeaveCard}
-    >
-      <div
-        className="flip-card-inner"
-        style={{
-          transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
-          transition: 'transform 0.6s'
-        }}
-      >
-        <div className="flip-card-front bg-white shadow-lg">
-          <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
-          <div className="absolute top-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-3">
-            <h3 className="text-black font-bold text-lg text-center">{frontTitle}</h3>
+    <>
+      <div className="flip-card h-[320px] md:h-[360px] cursor-pointer">
+        <div className="flip-card-inner">
+          <div className="flip-card-front bg-white shadow-lg">
+            <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
+            <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/70 to-transparent p-4">
+              <h3 className="text-white font-bold text-lg text-center">{frontTitle}</h3>
+            </div>
+          </div>
+          <div
+            className="flip-card-back shadow-lg overflow-hidden"
+            style={{ backgroundColor: isImageBack ? undefined : '#1E3A5F' }}
+            onClick={handleBackClick}
+          >
+            {isImageBack ? (
+              <img src={backImage} alt="Характеристики" className="w-full h-full object-contain bg-white" />
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center" style={{
+                backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}>
+                <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
+              </div>
+            )}
           </div>
         </div>
-        <div
-          className="flip-card-back shadow-lg overflow-visible"
-          style={{ backgroundColor: isImageBack ? undefined : '#1E3A5F' }}
-          onMouseEnter={handleMouseEnterBack}
-        >
-          {isImageBack ? (
-            <img
-              src={backImage}
-              alt="Характеристики"
-              className="bg-white rounded-xl shadow-2xl"
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: zoomed ? 'translate(-50%, -50%) scale(2)' : 'translate(-50%, -50%) scale(1)',
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                transition: 'transform 0.3s ease',
-                zIndex: zoomed ? 30 : 1,
-              }}
-            />
-          ) : (
-            <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center" style={{
-              backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}>
-              <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
-              <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
-            </div>
-          )}
-        </div>
       </div>
-    </div>
+
+      {zoomed && isImageBack && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm cursor-pointer"
+          onClick={() => setZoomed(false)}
+        >
+          <img
+            src={backImage}
+            alt="Характеристики"
+            className="rounded-xl shadow-2xl animate-in zoom-in-50 duration-300"
+            style={{ width: '680px', maxWidth: '90vw', maxHeight: '90vh', objectFit: 'contain' }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors"
+            onClick={() => setZoomed(false)}
+          >
+            <Icon name="X" size={32} />
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 
