@@ -96,7 +96,7 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
             <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
             <Button
               variant="outline"
-              className="mt-4 border-white text-white hover:bg-white hover:text-[#1E3A5F] transition-colors"
+              className="mt-4 bg-white border-white text-[#1E3A5F] font-semibold hover:bg-[#E67E22] hover:border-[#E67E22] hover:text-white active:bg-[#E67E22] active:border-[#E67E22] active:text-white transition-colors"
               size="sm"
             >
               Подробнее
