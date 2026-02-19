@@ -210,7 +210,7 @@ const Index = () => {
       backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9a25da5c-3529-4b35-a7a4-93b7d2a31757.jpg',
     },
     {
-      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/0396780e-168b-4294-b4ed-e7cff80588c2.jpg',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/2795cda0-f23c-49e4-83f4-859f67ce6499.jpg',
       frontTitle: 'Клей для газобетона',
       backTitle: '',
       backDescription: '',
