@@ -77,73 +77,77 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
   backImage?: string;
 }) {
   const [flipped, setFlipped] = useState(false);
-  const [zoomed, setZoomed] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const isImageBack = backImage && !backTitle;
 
-  const handleMouseEnterBack = () => {
-    if (isImageBack) setZoomed(true);
+  const handleMouseLeaveCard = () => {
+    if (!modalOpen) setFlipped(false);
   };
 
-  const handleMouseLeaveCard = () => {
-    setZoomed(false);
-    setFlipped(false);
+  const handleBackClick = () => {
+    if (isImageBack) setModalOpen(true);
   };
 
   return (
-    <div
-      className="flip-card h-[320px] md:h-[360px] cursor-pointer"
-      style={{ zIndex: zoomed ? 20 : 1 }}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={handleMouseLeaveCard}
-    >
+    <>
       <div
-        className="flip-card-inner"
-        style={{
-          transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
-          transition: 'transform 0.6s'
-        }}
+        className="flip-card h-[320px] md:h-[360px] cursor-pointer"
+        onMouseEnter={() => setFlipped(true)}
+        onMouseLeave={handleMouseLeaveCard}
       >
-        <div className="flip-card-front bg-white shadow-lg">
-          <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
-          <div className="absolute top-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-3">
-            <h3 className="text-black font-bold text-lg text-center">{frontTitle}</h3>
+        <div
+          className="flip-card-inner"
+          style={{
+            transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+            transition: 'transform 0.6s'
+          }}
+        >
+          <div className="flip-card-front bg-white shadow-lg">
+            <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
+            <div className="absolute top-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-3">
+              <h3 className="text-black font-bold text-lg text-center">{frontTitle}</h3>
+            </div>
+          </div>
+          <div
+            className="flip-card-back shadow-lg overflow-hidden"
+            style={{ backgroundColor: isImageBack ? undefined : '#1E3A5F' }}
+            onClick={handleBackClick}
+          >
+            {isImageBack ? (
+              <img src={backImage} alt="Характеристики" className="w-full h-full object-contain bg-white" />
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center" style={{
+                backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}>
+                <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
+              </div>
+            )}
           </div>
         </div>
-        <div
-          className="flip-card-back shadow-lg overflow-visible"
-          style={{ backgroundColor: isImageBack ? undefined : '#1E3A5F' }}
-          onMouseEnter={handleMouseEnterBack}
-        >
-          {isImageBack ? (
+      </div>
+
+      {modalOpen && isImageBack && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => { setModalOpen(false); setFlipped(false); }}>
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
             <img
               src={backImage}
               alt="Характеристики"
-              className="bg-white rounded-xl shadow-2xl"
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: zoomed ? 'translate(-50%, -50%) scale(2)' : 'translate(-50%, -50%) scale(1)',
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                transition: 'transform 0.3s ease',
-                zIndex: zoomed ? 30 : 1,
-              }}
+              className="rounded-xl shadow-2xl bg-white"
+              style={{ maxWidth: '90vw', maxHeight: '85vh', objectFit: 'contain' }}
             />
-          ) : (
-            <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center" style={{
-              backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}>
-              <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
-              <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
-            </div>
-          )}
+            <button
+              className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors"
+              onClick={() => { setModalOpen(false); setFlipped(false); }}
+            >
+              <Icon name="X" size={18} />
+            </button>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
