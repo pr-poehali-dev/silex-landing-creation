@@ -184,7 +184,7 @@ const Index = () => {
 
   const categories = [
     {
-      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/0d3a3da2-bdd0-4b4b-9cbf-bafb90bde9f9.jpg',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/739ce16a-efaa-4426-8293-6d77b2135ea1.jpg',
       frontTitle: '100 × 250 × 625 мм',
       backTitle: '',
       backDescription: '',
