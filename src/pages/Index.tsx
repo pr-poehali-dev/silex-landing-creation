@@ -611,16 +611,45 @@ const Index = () => {
               </Card>
             ))}
           </div>
-          <div className="scroll-animate text-center mt-10">
-            <a
-              href="https://yandex.ru/maps/-/CPafM8JG"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#E67E22] text-[#E67E22] font-semibold hover:bg-[#E67E22] hover:text-white transition-colors duration-300"
-            >
-              <Icon name="MapPin" size={18} />
-              Читать отзывы на Яндекс Картах
-            </a>
+          <div className="scroll-animate mt-12">
+            <div className="flex flex-col items-center gap-6">
+              <div className="flex flex-wrap justify-center gap-4">
+                <div className="reviews-widget-card bg-gradient-to-br from-[#fff7ed] to-[#fff] border border-[#E67E22]/20 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-md">
+                  <div className="text-4xl font-extrabold text-[#E67E22] leading-none">4.9</div>
+                  <div>
+                    <div className="flex gap-0.5 mb-1">
+                      {[1,2,3,4,5].map((s) => (
+                        <Icon key={s} name="Star" size={18} className="text-[#E67E22] fill-[#E67E22]" />
+                      ))}
+                    </div>
+                    <div className="text-xs text-[#333]/60 font-medium">Рейтинг на Яндекс Картах</div>
+                  </div>
+                </div>
+                <div className="reviews-widget-card bg-gradient-to-br from-[#eef6ff] to-[#fff] border border-[#1E3A5F]/15 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-md">
+                  <div className="text-4xl font-extrabold text-[#1E3A5F] leading-none">200+</div>
+                  <div>
+                    <div className="text-sm font-semibold text-[#1E3A5F]">отзывов</div>
+                    <div className="text-xs text-[#333]/60 font-medium">от реальных клиентов</div>
+                  </div>
+                </div>
+                <div className="reviews-widget-card bg-gradient-to-br from-[#f0fdf4] to-[#fff] border border-green-200 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-md">
+                  <div className="text-3xl">🏆</div>
+                  <div>
+                    <div className="text-sm font-semibold text-green-700">Лидер рынка</div>
+                    <div className="text-xs text-[#333]/60 font-medium">Приморский край</div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://yandex.ru/maps/-/CPafM8JG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#E67E22] text-[#E67E22] font-semibold hover:bg-[#E67E22] hover:text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
+              >
+                <Icon name="MapPin" size={18} />
+                Читать отзывы на Яндекс Картах
+              </a>
+            </div>
           </div>
         </div>
       </section>
