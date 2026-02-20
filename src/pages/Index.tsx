@@ -395,7 +395,7 @@ const Index = () => {
             >
               <div className={`banner-flip-inner ${bannerFlipped ? 'flipped' : ''}`}>
                 <div className="banner-flip-front">
-                  <img src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/241760fa-144b-4952-bb7d-9be11b2e5f95.jpg" alt="Акция — газобетон 13 150 руб. м³" className="w-full h-auto object-cover rounded-2xl py-40" />
+                  <img src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/241760fa-144b-4952-bb7d-9be11b2e5f95.jpg" alt="Акция — газобетон 13 150 руб. м³" className="w-full h-auto rounded-2xl mx-0 px-0 py-[5px] my-0 object-contain" />
                 </div>
                 <div className="banner-flip-back">
                   <img src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/57727bda-9c18-43a4-a5c0-b9d6e85c337b.jpg" alt="Акции и предложения" className="w-full h-auto object-cover rounded-2xl" />
