@@ -156,18 +156,18 @@
 
 @keyframes bannerRollIn {
   0% {
-    transform: translateX(-120%) rotate(-15deg);
+    transform: translateX(120%);
     opacity: 0;
   }
   60% {
-    transform: translateX(5%) rotate(2deg);
+    transform: translateX(-5%);
     opacity: 1;
   }
   80% {
-    transform: translateX(-2%) rotate(-1deg);
+    transform: translateX(2%);
   }
   100% {
-    transform: translateX(0) rotate(0deg);
+    transform: translateX(0);
     opacity: 1;
   }
 }
