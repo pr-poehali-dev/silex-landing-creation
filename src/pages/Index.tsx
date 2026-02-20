@@ -518,7 +518,7 @@ const Index = () => {
                   className="w-full h-[400px] object-cover"
                   controls
                   playsInline
-                  poster={WAREHOUSE_IMG}
+                  poster="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/61b8afee-3f97-474c-8712-f6499bff13f2.jpg"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-[#E67E22] text-white shadow-lg py-[13px] px-0 mx-[583px] rounded-2xl">

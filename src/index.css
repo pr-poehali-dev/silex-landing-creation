@@ -250,7 +250,7 @@ html {
 
 .video-glow-border {
   border: 4px solid #e67e22;
-  animation: borderGlow 1s ease-in-out infinite;
+  animation: borderGlow 5s ease-in-out infinite;
 }
 
 @keyframes widgetPop {
