@@ -357,7 +357,7 @@ const Index = () => {
           <p className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto mb-8 animate-fade-in-delay-1">
             Гарантия качества в каждом блоке
           </p>
-          <div className="banner-roll-in fixed bottom-6 left-6 z-50 w-72 max-w-[calc(100vw-3rem)]">
+          <div className="banner-roll-in max-w-4xl mx-auto w-full">
             <div
               className="banner-flip-container relative"
               onClick={() => {
