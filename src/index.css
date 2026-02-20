@@ -232,6 +232,27 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes borderGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px #e67e22,
+      0 0 20px 4px rgba(230, 126, 34, 0.6);
+    border-color: #e67e22;
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px rgba(230, 126, 34, 0.2),
+      0 0 8px 2px rgba(230, 126, 34, 0.1);
+    border-color: rgba(230, 126, 34, 0.3);
+  }
+}
+
+.video-glow-border {
+  border: 4px solid #e67e22;
+  animation: borderGlow 1s ease-in-out infinite;
+}
+
 @keyframes widgetPop {
   0% {
     opacity: 0;

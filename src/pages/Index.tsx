@@ -512,11 +512,15 @@ const Index = () => {
               </Button>
             </div>
             <div className="scroll-animate relative">
-              <img
-                src={WAREHOUSE_IMG}
-                alt="Складской комплекс ВИС"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
+              <div className="video-glow-border rounded-2xl shadow-2xl overflow-hidden">
+                <video
+                  src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/f3d5d9f0-0973-4342-8e27-7f700e96c08e.mp4"
+                  className="w-full h-[400px] object-cover"
+                  controls
+                  playsInline
+                  poster={WAREHOUSE_IMG}
+                />
+              </div>
               <div className="absolute -bottom-6 -left-6 bg-[#E67E22] text-white px-6 py-4 rounded-xl shadow-lg">
                 <div className="text-2xl font-extrabold" style={{ fontFamily: 'Montserrat' }}>500+</div>
                 <div className="text-sm text-white/90">наименований</div>
