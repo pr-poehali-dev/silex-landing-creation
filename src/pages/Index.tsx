@@ -611,6 +611,17 @@ const Index = () => {
               </Card>
             ))}
           </div>
+          <div className="scroll-animate text-center mt-10">
+            <a
+              href="https://yandex.ru/maps/-/CPafM8JG"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#E67E22] text-[#E67E22] font-semibold hover:bg-[#E67E22] hover:text-white transition-colors duration-300"
+            >
+              <Icon name="MapPin" size={18} />
+              Читать отзывы на Яндекс Картах
+            </a>
+          </div>
         </div>
       </section>
 
