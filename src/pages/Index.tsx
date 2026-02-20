@@ -184,35 +184,35 @@ const Index = () => {
 
   const categories = [
     {
-      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/739ce16a-efaa-4426-8293-6d77b2135ea1.jpg',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/47db70f8-7a47-48bb-9576-aa4ec318d8bc.jpg',
       frontTitle: '100 × 250 × 625 мм',
       backTitle: '',
       backDescription: '',
       backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/5405b939-cb36-4587-af76-d17ca0398a8a.jpg',
     },
     {
-      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/7634b7cf-41ed-4868-8119-6090882b9037.jpg',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/e1581d27-d273-4779-9019-c4d051c844b1.jpg',
       frontTitle: '200 × 250 × 625 мм',
       backTitle: '',
       backDescription: '',
       backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/6c442eeb-d949-4a79-a162-403edfab9204.jpg',
     },
     {
-      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/29fc215d-a94d-4a7b-ac64-1838ad2dadc8.jpg',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/c7bd86f6-91d8-4185-afd7-d794efe5768f.jpg',
       frontTitle: '300 × 250 × 625 мм',
       backTitle: '',
       backDescription: '',
       backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/5c1754e7-fc31-4e8f-915d-5c62d85e21d1.jpg',
     },
     {
-      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/25afee99-2cb5-4c28-8225-603262838dc1.jpg',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/ce6d4fc1-ef25-4529-bcb3-2e5931307d95.jpg',
       frontTitle: '400 × 250 × 625 мм',
       backTitle: '',
       backDescription: '',
       backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9a25da5c-3529-4b35-a7a4-93b7d2a31757.jpg',
     },
     {
-      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/2795cda0-f23c-49e4-83f4-859f67ce6499.jpg',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/7703afaa-ef76-478c-b772-61151620fbe7.jpg',
       frontTitle: 'Клей для газобетона',
       backTitle: '',
       backDescription: '',
