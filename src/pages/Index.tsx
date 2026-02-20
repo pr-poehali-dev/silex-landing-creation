@@ -521,7 +521,7 @@ const Index = () => {
                   poster={WAREHOUSE_IMG}
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-[#E67E22] text-white px-6 py-4 rounded-xl shadow-lg">
+              <div className="absolute -bottom-6 -left-6 bg-[#E67E22] text-white shadow-lg py-[13px] px-0 mx-[583px] rounded-2xl">
                 <div className="text-2xl font-extrabold" style={{ fontFamily: 'Montserrat' }}>500+</div>
                 <div className="text-sm text-white/90">наименований</div>
               </div>
