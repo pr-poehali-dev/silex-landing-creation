@@ -464,14 +464,14 @@ const Index = () => {
               <img
                 src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9c4a9017-aa7d-4310-b677-354098a3ea03.jpg"
                 alt="Почему выбирают нас"
-                className="w-full h-full rounded-0 object-fill"
+                className="w-full h-full rounded-0 object-fill transition-transform duration-500 hover:scale-105"
               />
             </div>
             <div className="scroll-animate rounded-2xl overflow-hidden h-[400px]">
               <img
                 src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9e2e8bef-3d4c-4a50-bf29-faa17aff20db.jpg"
                 alt="ВИС — всё для стройки"
-                className="w-full h-full object-fill"
+                className="w-full h-full object-fill transition-transform duration-500 hover:scale-105"
               />
             </div>
           </div>
