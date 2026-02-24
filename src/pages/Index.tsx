@@ -471,22 +471,41 @@ const Index = () => {
           <div className="scroll-animate text-center mb-8">
             <p className="text-[#E67E22] font-semibold text-sm uppercase tracking-widest mb-3">Почему выбирают нас</p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="scroll-animate rounded-2xl overflow-hidden h-[400px]">
-              <img
-                src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9c4a9017-aa7d-4310-b677-354098a3ea03.jpg"
-                alt="Почему выбирают нас"
-                className="w-full h-full rounded-0 object-fill transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-            <div className="scroll-animate rounded-2xl overflow-hidden h-[400px]">
-              <img
-                src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9e2e8bef-3d4c-4a50-bf29-faa17aff20db.jpg"
-                alt="ВИС — всё для стройки"
-                className="w-full h-full object-fill transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-          </div>
+          {(() => {
+            const imgs = [
+              { src: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9c4a9017-aa7d-4310-b677-354098a3ea03.jpg', alt: 'Почему выбирают нас' },
+              { src: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9e2e8bef-3d4c-4a50-bf29-faa17aff20db.jpg', alt: 'ВИС — всё для стройки' },
+            ];
+            return (
+              <>
+                <div className="grid grid-cols-2 gap-4">
+                  {imgs.map((img, i) => (
+                    <div
+                      key={i}
+                      className="scroll-animate rounded-2xl overflow-hidden h-[400px] cursor-zoom-in"
+                      onClick={() => {
+                        const overlay = document.createElement('div');
+                        overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:fadeIn 0.2s ease';
+                        const imgEl = document.createElement('img');
+                        imgEl.src = img.src;
+                        imgEl.alt = img.alt;
+                        imgEl.style.cssText = 'max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:0 25px 60px rgba(0,0,0,0.5)';
+                        overlay.appendChild(imgEl);
+                        overlay.onclick = () => overlay.remove();
+                        document.body.appendChild(overlay);
+                      }}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full h-full object-fill transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
         </div>
       </section>
 
