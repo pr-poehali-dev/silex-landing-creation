@@ -456,51 +456,17 @@ const Index = () => {
       {/* WHY VIS */}
       <section id="why-vis" className="py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="scroll-animate text-center md:text-left">
-              <p className="text-[#E67E22] font-semibold text-sm uppercase tracking-widest mb-3">Почему ВИС</p>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[#1E3A5F] mb-6" style={{ fontFamily: 'Montserrat' }}>
-                Всё в одном месте
-              </h2>
-              <p className="text-lg text-[#333]/70 mb-6 leading-relaxed">
-                Более 500 наименований строительных материалов на складе. Вы экономите время и деньги, заказывая всё у одного поставщика.
-              </p>
-              <div className="space-y-4">
-                {[
-                  'Комплексное снабжение объектов «под ключ»',
-                  'Собственный склад 5 000 м² — всё в наличии',
-                  'Индивидуальные цены для крупных заказчиков',
-                  'Оперативная отгрузка — менее 24 часов',
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#E67E22] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Icon name="Check" size={14} className="text-white" />
-                    </div>
-                    <span className="text-[#333] font-medium">{item}</span>
-                  </div>
-                ))}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="scroll-animate rounded-2xl overflow-hidden bg-[#f0f0f0] h-[400px] flex items-center justify-center cursor-pointer group relative">
+              <div className="flex flex-col items-center gap-3 text-[#999] group-hover:text-[#E67E22] transition-colors">
+                <Icon name="ImagePlus" size={48} />
+                <span className="text-sm font-medium">Добавить изображение</span>
               </div>
-              <Button
-                className="mt-8 bg-[#1E3A5F] hover:bg-[#1E3A5F]/90 text-white font-semibold px-8"
-                size="lg"
-                onClick={() => scrollTo('callback')}
-              >
-                Узнать подробнее
-              </Button>
             </div>
-            <div className="scroll-animate relative">
-              <div className="video-glow-border rounded-2xl shadow-2xl overflow-hidden">
-                <video
-                  src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/f3d5d9f0-0973-4342-8e27-7f700e96c08e.mp4"
-                  className="w-full h-[400px] object-cover"
-                  controls
-                  playsInline
-                  poster="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/61b8afee-3f97-474c-8712-f6499bff13f2.jpg"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 text-white shadow-lg py-[13px] rounded-2xl bg-slate-800 px-[7px] mx-[540px]">
-                <div className="text-2xl font-extrabold" style={{ fontFamily: 'Montserrat' }}>500+</div>
-                <div className="text-sm text-white/90">наименований</div>
+            <div className="scroll-animate rounded-2xl overflow-hidden bg-[#f0f0f0] h-[400px] flex items-center justify-center cursor-pointer group relative">
+              <div className="flex flex-col items-center gap-3 text-[#999] group-hover:text-[#E67E22] transition-colors">
+                <Icon name="ImagePlus" size={48} />
+                <span className="text-sm font-medium">Добавить изображение</span>
               </div>
             </div>
           </div>
