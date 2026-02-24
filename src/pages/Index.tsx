@@ -464,11 +464,12 @@ const Index = () => {
                 className="w-full h-full rounded-0 object-fill"
               />
             </div>
-            <div className="scroll-animate rounded-2xl overflow-hidden bg-[#f0f0f0] h-[400px] flex items-center justify-center cursor-pointer group relative">
-              <div className="flex flex-col items-center gap-3 text-[#999] group-hover:text-[#E67E22] transition-colors">
-                <Icon name="ImagePlus" size={48} />
-                <span className="text-sm font-medium">Добавить изображение</span>
-              </div>
+            <div className="scroll-animate rounded-2xl overflow-hidden h-[400px]">
+              <img
+                src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9e2e8bef-3d4c-4a50-bf29-faa17aff20db.jpg"
+                alt="ВИС — всё для стройки"
+                className="w-full h-full object-fill"
+              />
             </div>
           </div>
         </div>
