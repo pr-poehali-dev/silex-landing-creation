@@ -761,7 +761,8 @@ const Index = () => {
                   <a href="tel:+74232448010" className="block text-[#1E3A5F] hover:text-[#E67E22] transition-colors font-medium">
                     +7 (423) 244-80-10
                   </a>
-                  <a href="tel:+79147922784" className="block text-[#1E3A5F] hover:text-[#E67E22] transition-colors font-medium mt-1">
+                  <a href="https://max.ru/u/f9LHodD0cOJeqBIEYMN3NMyf-Hx85yqfnOpRApJuFQvoU_sOxqtkoeqraow" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1E3A5F] hover:text-[#E67E22] transition-colors font-medium mt-1">
+                    <img src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/7682a930-2e78-4941-9562-49c03023e6f2.png" alt="Max" className="w-5 h-5 object-contain flex-shrink-0" />
                     +7 (914) 792-27-84 <span className="text-[#333]/40 text-sm">(Max)</span>
                   </a>
                 </div>
