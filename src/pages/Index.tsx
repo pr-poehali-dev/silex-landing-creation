@@ -383,8 +383,9 @@ const Index = () => {
               { number: 24, suffix: 'ч', label: 'От заявки до отгрузки', icon: 'Clock' },
             ].map((stat, i) => (
               <div key={i} className="scroll-animate text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#1E3A5F]/5 flex items-center justify-center group-hover:bg-[#E67E22]/10 transition-colors">
-                  <Icon name={stat.icon} size={28} className="text-[#1E3A5F] group-hover:text-[#E67E22] transition-colors" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl relative flex items-center justify-center overflow-hidden bg-[#1E3A5F]/5">
+                  <div className="absolute bottom-0 left-0 right-0 h-0 bg-[#E67E22] transition-all duration-500 ease-out group-hover:h-full" />
+                  <Icon name={stat.icon} size={28} className="text-[#1E3A5F] group-hover:text-white transition-colors duration-300 relative z-10" />
                 </div>
                 <div className="text-3xl md:text-4xl font-extrabold text-[#1E3A5F] mb-2" style={{ fontFamily: 'Montserrat' }}>
                   {stat.number === 24 ? '< ' : ''}<AnimatedCounter end={stat.number} suffix={stat.suffix} />
