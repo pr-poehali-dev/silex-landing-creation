@@ -302,8 +302,17 @@ const Index = () => {
             </a>
             <Button
               size="sm"
-              className="bg-[#E67E22] hover:bg-[#d35400] text-white font-semibold hidden md:flex"
-              onClick={() => scrollTo('callback')}
+              className="bg-[#E67E22] hover:bg-[#d35400] text-white font-semibold hidden md:flex relative overflow-hidden ripple-btn"
+              onClick={(e) => {
+                const btn = e.currentTarget;
+                const circle = document.createElement('span');
+                const diameter = Math.max(btn.clientWidth, btn.clientHeight);
+                const radius = diameter / 2;
+                circle.style.cssText = `width:${diameter}px;height:${diameter}px;left:${e.clientX - btn.getBoundingClientRect().left - radius}px;top:${e.clientY - btn.getBoundingClientRect().top - radius}px;position:absolute;border-radius:50%;background:rgba(255,255,255,0.4);transform:scale(0);animation:ripple 0.6s linear;pointer-events:none;`;
+                btn.appendChild(circle);
+                setTimeout(() => circle.remove(), 600);
+                scrollTo('callback');
+              }}
             >
               Получить расчёт
             </Button>

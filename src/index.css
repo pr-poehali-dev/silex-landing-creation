@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 97.3%;
