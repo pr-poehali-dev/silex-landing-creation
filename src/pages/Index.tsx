@@ -503,8 +503,9 @@ const Index = () => {
                 className="scroll-animate group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="w-14 h-14 rounded-xl bg-[#E67E22]/20 flex items-center justify-center mb-5 group-hover:bg-[#E67E22]/30 transition-colors">
-                  <Icon name={srv.icon} size={26} className="text-[#E67E22]" />
+                <div className="w-14 h-14 rounded-xl relative flex items-center justify-center mb-5 overflow-hidden bg-[#E67E22]/20">
+                  <div className="absolute bottom-0 left-0 right-0 h-0 bg-[#E67E22] transition-all duration-500 ease-out group-hover:h-full" />
+                  <Icon name={srv.icon} size={26} className="text-[#E67E22] group-hover:text-white transition-colors duration-300 relative z-10" />
                 </div>
                 <h3 className="text-white font-bold text-lg mb-2">{srv.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{srv.description}</p>
