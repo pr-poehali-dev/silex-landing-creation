@@ -459,7 +459,7 @@ const Index = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="scroll-animate rounded-2xl overflow-hidden h-[400px]">
               <img
-                src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/f251332b-262a-4f05-b275-71b2a9917f8a.jpg"
+                src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/9c4a9017-aa7d-4310-b677-354098a3ea03.jpg"
                 alt="Почему выбирают нас"
                 className="w-full h-full rounded-0 object-fill"
               />
