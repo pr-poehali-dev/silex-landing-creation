@@ -822,7 +822,7 @@ const Index = () => {
 
             <div className="scroll-animate rounded-2xl overflow-hidden shadow-lg h-[400px]">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=132.183340%2C43.354430&z=16&pt=132.183340%2C43.354430%2Cpm2rdm&text=%D0%90%D1%80%D1%82%D1%91%D0%BC%2C%20%D1%83%D0%BB.%20%D0%92%D0%BE%D0%BA%D0%B7%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20114&mode=search&oid=178050825448&ol=biz"
+                src="https://yandex.ru/map-widget/v1/?text=%D0%92%D0%BE%D1%81%D1%82%D0%BE%D0%BA-%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%A1%D1%82%D0%B0%D0%BB%D1%8C&ll=132.183340%2C43.354430&z=16&mode=search&ol=biz"
                 width="100%"
                 height="100%"
                 frameBorder="0"
