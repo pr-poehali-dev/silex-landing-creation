@@ -457,11 +457,12 @@ const Index = () => {
       <section id="why-vis" className="py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 gap-4">
-            <div className="scroll-animate rounded-2xl overflow-hidden bg-[#f0f0f0] h-[400px] flex items-center justify-center cursor-pointer group relative">
-              <div className="flex flex-col items-center gap-3 text-[#999] group-hover:text-[#E67E22] transition-colors">
-                <Icon name="ImagePlus" size={48} />
-                <span className="text-sm font-medium">Добавить изображение</span>
-              </div>
+            <div className="scroll-animate rounded-2xl overflow-hidden h-[400px]">
+              <img
+                src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/f251332b-262a-4f05-b275-71b2a9917f8a.jpg"
+                alt="Почему выбирают нас"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="scroll-animate rounded-2xl overflow-hidden bg-[#f0f0f0] h-[400px] flex items-center justify-center cursor-pointer group relative">
               <div className="flex flex-col items-center gap-3 text-[#999] group-hover:text-[#E67E22] transition-colors">
