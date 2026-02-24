@@ -419,6 +419,19 @@ const Index = () => {
           <div className="banner-roll-in w-full max-w-4xl px-4 mx-auto mt-12 animate-heartbeat">
             <div
               className="banner-flip-container relative"
+              onMouseMove={(e) => {
+                const el = e.currentTarget as HTMLDivElement;
+                const rect = el.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                el.style.transform = `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale(1.02)`;
+                el.style.transition = 'transform 0.1s ease';
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)';
+                el.style.transition = 'transform 0.4s ease';
+              }}
               onClick={() => {
                 setBannerFlipped(!bannerFlipped);
                 if (!bannerFlipped) {
