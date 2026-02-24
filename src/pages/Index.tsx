@@ -498,7 +498,7 @@ const Index = () => {
                   poster="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/61b8afee-3f97-474c-8712-f6499bff13f2.jpg"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 text-white shadow-lg py-[13px] mx-[583px] rounded-2xl px-[18px] bg-slate-800">
+              <div className="absolute -bottom-6 -left-6 text-white shadow-lg py-[13px] rounded-2xl bg-slate-800 px-[7px] mx-[540px]">
                 <div className="text-2xl font-extrabold" style={{ fontFamily: 'Montserrat' }}>500+</div>
                 <div className="text-sm text-white/90">наименований</div>
               </div>
