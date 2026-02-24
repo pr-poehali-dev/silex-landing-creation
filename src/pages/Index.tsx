@@ -405,29 +405,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0">
-          <div className="bg-white/10 backdrop-blur-sm border-t border-white/20">
-            <div className="max-w-[1200px] md:px-8 rounded-lg my-1 mx-0 px-0 py-[13px] bg-transparent">
-              <div className="w-full overflow-hidden">
-                <div className="flex gap-0 min-w-0 w-full">
-                  {[
-                    { emoji: '📦', text: 'Газобетон' },
-                    { emoji: '🧱', text: 'Кирпич' },
-                    { emoji: '🛡️', text: 'Утеплители' },
-                    { emoji: '🏗️', text: 'Сухие смеси' },
-                    { emoji: '⚙️', text: 'ЖБИ' },
-                    { emoji: '🏭', text: 'Асбестоцементные изделия' },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-1.5 flex-1 justify-center min-w-0 px-0 mx-0 py-0 my-0 rounded-0">
-                      <span className="text-xl md:text-2xl flex-shrink-0">{item.emoji}</span>
-                      <span className="text-white/90 md:text-sm font-medium truncate mx-0 my-0 px-0 text-xs">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </section>
 
       {/* TRUST NUMBERS */}
