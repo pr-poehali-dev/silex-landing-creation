@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import func2url from '../../backend/func2url.json';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -157,6 +158,7 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [bannerFlipped, setBannerFlipped] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
   const containerRef = useScrollAnimation();
@@ -660,10 +662,24 @@ const Index = () => {
                     Оставить заявку
                   </h3>
                   <form
-                    onSubmit={(e) => {
+                    onSubmit={async (e) => {
                       e.preventDefault();
-                      alert('Спасибо! Мы перезвоним вам в течение 60 минут.');
-                      setFormData({ name: '', phone: '', message: '' });
+                      setFormStatus('loading');
+                      try {
+                        const res = await fetch(func2url['send-email'], {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify(formData),
+                        });
+                        if (res.ok) {
+                          setFormStatus('success');
+                          setFormData({ name: '', phone: '', message: '' });
+                        } else {
+                          setFormStatus('error');
+                        }
+                      } catch {
+                        setFormStatus('error');
+                      }
                     }}
                     className="space-y-4"
                   >
@@ -694,12 +710,23 @@ const Index = () => {
                         className="bg-[#F8F8F8] border-0 text-[#333] placeholder:text-[#333]/40 min-h-[100px]"
                       />
                     </div>
+                    {formStatus === 'success' && (
+                      <div className="rounded-xl bg-green-50 border border-green-200 text-green-700 px-4 py-3 text-sm font-medium">
+                        Спасибо! Ваша заявка принята, мы свяжемся с вами в ближайшее время.
+                      </div>
+                    )}
+                    {formStatus === 'error' && (
+                      <div className="rounded-xl bg-red-50 border border-red-200 text-red-600 px-4 py-3 text-sm font-medium">
+                        Произошла ошибка. Пожалуйста, позвоните нам напрямую.
+                      </div>
+                    )}
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-[#E67E22] hover:bg-[#d35400] text-white font-bold text-lg h-14"
+                      disabled={formStatus === 'loading'}
+                      className="w-full bg-[#E67E22] hover:bg-[#d35400] text-white font-bold text-lg h-14 disabled:opacity-70"
                     >
-                      Получить расчёт за 60 минут
+                      {formStatus === 'loading' ? 'Отправляем...' : 'Получить расчёт за 60 минут'}
                     </Button>
                     <p className="text-xs text-center text-[#333]/40">
                       Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности

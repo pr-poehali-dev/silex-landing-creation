@@ -1,0 +1,79 @@
+import json
+import os
+import smtplib
+import ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from datetime import datetime
+
+
+def handler(event: dict, context) -> dict:
+    """Отправка заявки с сайта на почту vostokinveststal@mail.ru"""
+
+    cors_headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+    }
+
+    if event.get('httpMethod') == 'OPTIONS':
+        return {'statusCode': 200, 'headers': cors_headers, 'body': ''}
+
+    body = json.loads(event.get('body') or '{}')
+    name = body.get('name', '').strip()
+    phone = body.get('phone', '').strip()
+    message = body.get('message', '').strip()
+
+    if not name or not phone:
+        return {
+            'statusCode': 400,
+            'headers': cors_headers,
+            'body': json.dumps({'error': 'Имя и телефон обязательны'}),
+        }
+
+    now = datetime.now().strftime('%d.%m.%Y %H:%M')
+
+    email_login = os.environ['EMAIL_LOGIN']
+    email_password = os.environ['EMAIL_PASSWORD']
+    recipient = 'vostokinveststal@mail.ru'
+
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = 'Новая заявка с сайта'
+    msg['From'] = email_login
+    msg['To'] = recipient
+
+    text_body = f"""Новая заявка с сайта
+
+Имя: {name}
+Телефон: {phone}
+Сообщение: {message if message else 'не указано'}
+Дата и время: {now}
+"""
+
+    html_body = f"""
+<html>
+<body style="font-family: Arial, sans-serif; color: #333;">
+  <h2 style="color: #1E3A5F;">Новая заявка с сайта</h2>
+  <table style="border-collapse: collapse; width: 100%; max-width: 500px;">
+    <tr><td style="padding: 8px; font-weight: bold; color: #666;">Имя:</td><td style="padding: 8px;">{name}</td></tr>
+    <tr style="background:#f9f9f9;"><td style="padding: 8px; font-weight: bold; color: #666;">Телефон:</td><td style="padding: 8px;"><a href="tel:{phone}">{phone}</a></td></tr>
+    <tr><td style="padding: 8px; font-weight: bold; color: #666;">Сообщение:</td><td style="padding: 8px;">{message if message else 'не указано'}</td></tr>
+    <tr style="background:#f9f9f9;"><td style="padding: 8px; font-weight: bold; color: #666;">Дата и время:</td><td style="padding: 8px;">{now}</td></tr>
+  </table>
+</body>
+</html>
+"""
+
+    msg.attach(MIMEText(text_body, 'plain', 'utf-8'))
+    msg.attach(MIMEText(html_body, 'html', 'utf-8'))
+
+    context_ssl = ssl.create_default_context()
+    with smtplib.SMTP_SSL('smtp.mail.ru', 465, context=context_ssl) as server:
+        server.login(email_login, email_password)
+        server.sendmail(email_login, recipient, msg.as_string())
+
+    return {
+        'statusCode': 200,
+        'headers': cors_headers,
+        'body': json.dumps({'success': True}),
+    }
