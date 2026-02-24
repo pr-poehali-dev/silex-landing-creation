@@ -761,7 +761,8 @@ const Index = () => {
                   <a href="tel:+74232448010" className="block text-[#1E3A5F] hover:text-[#E67E22] transition-colors font-medium">
                     +7 (423) 244-80-10
                   </a>
-                  <a href="tel:+79147922784" className="block text-[#1E3A5F] hover:text-[#E67E22] transition-colors font-medium mt-1">
+                  <a href="https://max.ru/u/f9LHodD0cOJeqBIEYMN3NMyf-Hx85yqfnOpRApJuFQvoU_sOxqtkoeqraow" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#1E3A5F] hover:text-[#E67E22] transition-colors font-medium mt-1">
+                    <Icon name="MessageCircle" size={16} className="flex-shrink-0" />
                     +7 (914) 792-27-84 <span className="text-[#333]/40 text-sm">(Max)</span>
                   </a>
                 </div>
