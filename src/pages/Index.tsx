@@ -781,6 +781,18 @@ const Index = () => {
 
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[#1E3A5F]/5 flex items-center justify-center flex-shrink-0">
+                  <Icon name="Globe" size={22} className="text-[#1E3A5F]" />
+                </div>
+                <div>
+                  <div className="font-semibold text-[#333] mb-1">Сайт</div>
+                  <a href="https://vi-stal.ru" target="_blank" rel="noopener noreferrer" className="text-[#1E3A5F] hover:text-[#E67E22] transition-colors font-medium">
+                    vi-stal.ru
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[#1E3A5F]/5 flex items-center justify-center flex-shrink-0">
                   <Icon name="Clock" size={22} className="text-[#1E3A5F]" />
                 </div>
                 <div>
