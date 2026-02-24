@@ -11,6 +11,29 @@
   }
 }
 
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.04);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.04);
+  }
+  56% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2.4s ease-in-out infinite;
+}
+
 @layer base {
   :root {
     --background: 0 0% 97.3%;

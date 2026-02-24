@@ -414,7 +414,7 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="banner-roll-in w-full max-w-4xl px-4 mx-auto mt-12">
+          <div className="banner-roll-in w-full max-w-4xl px-4 mx-auto mt-12 animate-heartbeat">
             <div
               className="banner-flip-container relative"
               onClick={() => {
