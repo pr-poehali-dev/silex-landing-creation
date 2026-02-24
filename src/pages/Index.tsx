@@ -660,7 +660,6 @@ const Index = () => {
                 {[
                   { icon: 'Clock', text: 'Ответ в течение 60 минут' },
                   { icon: 'FileText', text: 'Готовое КП с ценами и сроками' },
-                  { icon: 'Percent', text: 'Скидка 5% на первый заказ' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-[#E67E22]/20 flex items-center justify-center flex-shrink-0">
