@@ -522,7 +522,7 @@ const Index = () => {
             {services.map((srv, i) => (
               <div
                 key={i}
-                className="scroll-animate group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+                className="scroll-animate group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
                 <div className="w-14 h-14 rounded-xl relative flex items-center justify-center mb-5 overflow-hidden bg-[#E67E22]/20">
