@@ -456,6 +456,9 @@ const Index = () => {
       {/* WHY VIS */}
       <section id="why-vis" className="py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
+          <div className="scroll-animate text-center mb-8">
+            <p className="text-[#E67E22] font-semibold text-sm uppercase tracking-widest mb-3">Почему выбирают нас</p>
+          </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="scroll-animate rounded-2xl overflow-hidden h-[400px]">
               <img
