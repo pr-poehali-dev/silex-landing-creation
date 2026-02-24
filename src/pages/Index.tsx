@@ -838,8 +838,7 @@ const Index = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-[#333] mb-1">Режим работы</div>
-                  <div className="text-[#333]/60">Пн–Пт: 8:00–17:00</div>
-                  <div className="text-[#333]/60">Сб: 9:00–14:00</div>
+                  <div className="text-[#333]/60">Пн–Пт: 8:30–17:30</div>
                 </div>
               </div>
 
