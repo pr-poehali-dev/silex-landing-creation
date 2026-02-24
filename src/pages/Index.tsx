@@ -457,7 +457,7 @@ const Index = () => {
       <section id="why-vis" className="py-16 md:py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="scroll-animate">
+            <div className="scroll-animate text-center md:text-left">
               <p className="text-[#E67E22] font-semibold text-sm uppercase tracking-widest mb-3">Почему ВИС</p>
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#1E3A5F] mb-6" style={{ fontFamily: 'Montserrat' }}>
                 Всё в одном месте
