@@ -38,9 +38,11 @@ def handler(event: dict, context) -> dict:
     recipient = 'vostokinveststal@mail.ru'
 
     msg = MIMEMultipart('alternative')
-    msg['Subject'] = 'Новая заявка с сайта'
+    msg['Subject'] = 'Новая заявка с сайта — Лендинг газобетона'
     msg['From'] = email_login
     msg['To'] = recipient
+
+    source = 'Лендинг газобетона (Автоклавный газобетон — Восток-ИнвестСталь)'
 
     text_body = f"""Новая заявка с сайта
 
@@ -48,6 +50,7 @@ def handler(event: dict, context) -> dict:
 Телефон: {phone}
 Сообщение: {message if message else 'не указано'}
 Дата и время: {now}
+Источник: {source}
 """
 
     html_body = f"""
@@ -59,6 +62,7 @@ def handler(event: dict, context) -> dict:
     <tr style="background:#f9f9f9;"><td style="padding: 8px; font-weight: bold; color: #666;">Телефон:</td><td style="padding: 8px;"><a href="tel:{phone}">{phone}</a></td></tr>
     <tr><td style="padding: 8px; font-weight: bold; color: #666;">Сообщение:</td><td style="padding: 8px;">{message if message else 'не указано'}</td></tr>
     <tr style="background:#f9f9f9;"><td style="padding: 8px; font-weight: bold; color: #666;">Дата и время:</td><td style="padding: 8px;">{now}</td></tr>
+    <tr><td style="padding: 8px; font-weight: bold; color: #666;">Источник:</td><td style="padding: 8px; color: #E67E22;">{source}</td></tr>
   </table>
 </body>
 </html>
