@@ -784,8 +784,8 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <div className="scroll-animate space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#1E3A5F]/5 flex items-center justify-center flex-shrink-0">
-                  <Icon name="MapPin" size={22} className="text-[#1E3A5F]" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center flex-shrink-0 shadow-md cursor-pointer">
+                  <span className="text-2xl icon-spin select-none">📍</span>
                 </div>
                 <div>
                   <div className="font-semibold text-[#333] mb-1">Адрес</div>
@@ -794,8 +794,8 @@ const Index = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#1E3A5F]/5 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Phone" size={22} className="text-[#1E3A5F]" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center flex-shrink-0 shadow-md cursor-pointer">
+                  <span className="text-2xl icon-spin select-none">📞</span>
                 </div>
                 <div>
                   <div className="font-semibold text-[#333] mb-1">Телефоны</div>
@@ -810,8 +810,8 @@ const Index = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#1E3A5F]/5 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Mail" size={22} className="text-[#1E3A5F]" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center flex-shrink-0 shadow-md cursor-pointer">
+                  <span className="text-2xl icon-spin select-none">✉️</span>
                 </div>
                 <div>
                   <div className="font-semibold text-[#333] mb-1">Email</div>
@@ -822,8 +822,8 @@ const Index = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#1E3A5F]/5 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Globe" size={22} className="text-[#1E3A5F]" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center flex-shrink-0 shadow-md cursor-pointer">
+                  <span className="text-2xl icon-spin select-none">🌐</span>
                 </div>
                 <div>
                   <div className="font-semibold text-[#333] mb-1">Сайт</div>
@@ -834,8 +834,8 @@ const Index = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#1E3A5F]/5 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Clock" size={22} className="text-[#1E3A5F]" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center flex-shrink-0 shadow-md cursor-pointer">
+                  <span className="text-2xl icon-spin select-none">🕐</span>
                 </div>
                 <div>
                   <div className="font-semibold text-[#333] mb-1">Режим работы</div>
