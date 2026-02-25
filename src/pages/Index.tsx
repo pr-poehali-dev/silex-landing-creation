@@ -154,6 +154,72 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
   );
 }
 
+function LeaveReviewForm() {
+  const [stars, setStars] = useState(0);
+  const [hovered, setHovered] = useState(0);
+  const [name, setName] = useState('');
+  const [text, setText] = useState('');
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!stars || !name.trim() || !text.trim()) return;
+    setSent(true);
+  };
+
+  if (sent) {
+    return (
+      <div className="text-center py-4">
+        <div className="text-3xl mb-2">🎉</div>
+        <div className="font-semibold text-[#1E3A5F]">Спасибо за отзыв!</div>
+        <div className="text-sm text-[#333]/50 mt-1">Мы ценим ваше мнение</div>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <div className="flex gap-1">
+        {[1,2,3,4,5].map((s) => (
+          <button
+            key={s}
+            type="button"
+            onMouseEnter={() => setHovered(s)}
+            onMouseLeave={() => setHovered(0)}
+            onClick={() => setStars(s)}
+          >
+            <Icon
+              name="Star"
+              size={28}
+              className={`transition-colors ${s <= (hovered || stars) ? 'text-[#E67E22] fill-[#E67E22]' : 'text-[#333]/20'}`}
+            />
+          </button>
+        ))}
+      </div>
+      <Input
+        placeholder="Ваше имя"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="bg-white border-[#1E3A5F]/15"
+      />
+      <Textarea
+        placeholder="Ваш отзыв..."
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        rows={3}
+        className="bg-white border-[#1E3A5F]/15 resize-none"
+      />
+      <Button
+        type="submit"
+        disabled={!stars || !name.trim() || !text.trim()}
+        className="w-full bg-[#E67E22] hover:bg-[#d97218] text-white"
+      >
+        Отправить отзыв
+      </Button>
+    </form>
+  );
+}
+
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -264,9 +330,6 @@ const Index = () => {
     { company: 'СтройИнвест', author: 'Александр Петров', role: 'Директор', text: 'Работаем с ВИС уже 5 лет. Стабильные поставки, адекватные цены и всегда в наличии нужный ассортимент.' },
     { company: 'ДВ-Строй', author: 'Марина Ким', role: 'Начальник снабжения', text: 'Отличная логистика и оперативность. Материалы приходят точно в срок, качество подтверждено сертификатами.' },
     { company: 'ПримСтрой', author: 'Олег Волков', role: 'Прораб', text: 'Газобетон от ВИС — идеальная геометрия блоков. Кладка идёт быстро, расход клея минимальный.' },
-    { company: 'Тихоокеанская СК', author: 'Елена Сидорова', role: 'Менеджер проектов', text: 'Помогли с расчётом материалов для крупного объекта. Сэкономили нам и время, и бюджет.' },
-    { company: 'Восток-Девелопмент', author: 'Дмитрий Ли', role: 'Генеральный директор', text: 'Надёжный партнёр для масштабных проектов. Гибкие условия оплаты и индивидуальный подход.' },
-    { company: 'АртёмСтрой', author: 'Игорь Новиков', role: 'Руководитель', text: 'Ж/Д тупик и собственный склад — большой плюс. Можем забирать материалы в удобное время.' },
   ];
 
   return (
@@ -648,6 +711,15 @@ const Index = () => {
                 <Icon name="MapPin" size={18} />
                 Читать отзывы на 2ГИС
               </a>
+            </div>
+          </div>
+
+          {/* LEAVE REVIEW */}
+          <div className="scroll-animate mt-12 max-w-xl mx-auto">
+            <div className="bg-[#F8F8F8] rounded-2xl p-6 border border-[#1E3A5F]/10">
+              <h3 className="text-lg font-bold text-[#1E3A5F] mb-1" style={{ fontFamily: 'Montserrat' }}>Оставить отзыв</h3>
+              <p className="text-sm text-[#333]/50 mb-4">Поделитесь своим опытом работы с нами</p>
+              <LeaveReviewForm />
             </div>
           </div>
         </div>
