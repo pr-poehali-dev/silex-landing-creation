@@ -436,15 +436,14 @@ const Index = () => {
 
       {/* HERO */}
       <section
-        className="relative flex items-start justify-center"
+        className="relative min-h-screen flex items-center justify-center"
         style={{
-          minHeight: '500px',
           backgroundImage: `linear-gradient(135deg, rgba(30,58,95,0.82) 0%, rgba(30,58,95,0.55) 100%), url('${HERO_IMG}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 text-center text-white" style={{ marginTop: '300px', paddingBottom: '80px' }}>
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 text-center text-white" style={{ paddingTop: '980px', paddingBottom: '80px' }}>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-fade-in" style={{ fontFamily: 'Montserrat' }}>
             Автоклавный газобетон.
             <br />
