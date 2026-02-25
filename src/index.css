@@ -4,10 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --hero-height: calc(100vh - 300px);
-}
-
 @keyframes float {
   0%,
   100% {
