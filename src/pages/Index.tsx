@@ -109,21 +109,16 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
           </div>
           <div
             className="flip-card-back shadow-lg overflow-hidden"
-            style={{ backgroundColor: isImageBack ? undefined : '#1E3A5F' }}
-            onClick={handleBackClick}
+            style={{
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url(${backImage || frontImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
           >
-            {isImageBack ? (
-              <img src={backImage} alt="Характеристики" className="w-full h-full object-contain bg-white" />
-            ) : (
-              <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center" style={{
-                backgroundImage: backImage ? `linear-gradient(rgba(30,58,95,0.85), rgba(30,58,95,0.92)), url(${backImage})` : undefined,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}>
-                <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
-                <p className="text-white/80 text-sm leading-relaxed">{backDescription}</p>
-              </div>
-            )}
+            <div className="flex flex-col items-center justify-center h-full p-6 text-white text-center">
+              <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
+              <p className="text-white/85 text-sm leading-relaxed">{backDescription}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -307,30 +302,30 @@ const Index = () => {
     {
       frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/2b316a9f-dd27-4186-80d5-f14031da1d9d.jpeg',
       frontTitle: 'Объект 1',
-      backTitle: 'ЖК «Гавань Резиденс»',
-      backDescription: 'Поставка газобетона, утеплителей и сухих смесей для жилого комплекса на 450 квартир.',
-      backImage: HERO_IMG,
+      backTitle: 'Частный дом',
+      backDescription: 'Поставка газобетона для строительства трёхэтажного частного дома с гаражом.',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/2b316a9f-dd27-4186-80d5-f14031da1d9d.jpeg',
     },
     {
       frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/51d898ff-06ce-4700-80cc-971341176291.jpeg',
       frontTitle: 'Объект 2',
-      backTitle: 'ТЦ «Парус»',
-      backDescription: 'Полное снабжение строительными материалами торгового центра площадью 12 000 м².',
-      backImage: PROJECT_IMG,
+      backTitle: 'Одноэтажный дом',
+      backDescription: 'Поставка газобетонных блоков для строительства одноэтажного жилого дома.',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/51d898ff-06ce-4700-80cc-971341176291.jpeg',
     },
     {
       frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/a7bd0a15-d930-46e9-81fa-117f19da3fc3.jpeg',
       frontTitle: 'Объект 3',
-      backTitle: 'Логистический центр',
-      backDescription: 'Газобетон и металлоконструкции для складского комплекса класса А.',
-      backImage: WAREHOUSE_IMG,
+      backTitle: 'Двухэтажный дом',
+      backDescription: 'Газобетон для двухэтажного дома с мансардой и панорамными окнами.',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/a7bd0a15-d930-46e9-81fa-117f19da3fc3.jpeg',
     },
     {
       frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/44db49fc-c19d-461d-b8ba-f5f7fcc3a263.jpeg',
       frontTitle: 'Объект 4',
-      backTitle: 'КП «Новый берег»',
-      backDescription: 'Поставка стеновых материалов и кровли для 80 индивидуальных домов.',
-      backImage: BLOCKS_IMG,
+      backTitle: 'Коттедж',
+      backDescription: 'Поставка стеновых блоков для строительства коттеджа с тёмными окнами.',
+      backImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/44db49fc-c19d-461d-b8ba-f5f7fcc3a263.jpeg',
     },
   ];
 
