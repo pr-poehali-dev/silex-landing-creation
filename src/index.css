@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 @keyframes spinIcon {
   from {
     transform: rotate(15deg);

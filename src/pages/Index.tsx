@@ -612,7 +612,7 @@ const Index = () => {
           <div className="scroll-animate mt-12">
             <div className="flex flex-col items-center gap-6">
               <div className="flex flex-wrap justify-center gap-4">
-                <div className="reviews-widget-card bg-gradient-to-br from-[#fff7ed] to-[#fff] border border-[#E67E22]/20 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-md">
+                <div className="reviews-widget-card animate-float bg-gradient-to-br from-[#fff7ed] to-[#fff] border border-[#E67E22]/20 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-md">
                   <div className="text-4xl font-extrabold text-[#E67E22] leading-none">4.7</div>
                   <div>
                     <div className="flex gap-0.5 mb-1">
