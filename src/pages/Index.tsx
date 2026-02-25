@@ -154,17 +154,28 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
   );
 }
 
-function LeaveReviewForm() {
+const REVIEWS_URL = func2url['reviews'];
+
+function LeaveReviewForm({ onSubmitted }: { onSubmitted?: () => void }) {
   const [stars, setStars] = useState(0);
   const [hovered, setHovered] = useState(0);
   const [name, setName] = useState('');
   const [text, setText] = useState('');
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!stars || !name.trim() || !text.trim()) return;
+    setLoading(true);
+    await fetch(REVIEWS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ author: name.trim(), text: text.trim(), stars }),
+    });
+    setLoading(false);
     setSent(true);
+    onSubmitted?.();
   };
 
   if (sent) {
@@ -172,7 +183,7 @@ function LeaveReviewForm() {
       <div className="text-center py-4">
         <div className="text-3xl mb-2">🎉</div>
         <div className="font-semibold text-[#1E3A5F]">Спасибо за отзыв!</div>
-        <div className="text-sm text-[#333]/50 mt-1">Мы ценим ваше мнение</div>
+        <div className="text-sm text-[#333]/50 mt-1">Он появится после проверки</div>
       </div>
     );
   }
@@ -211,10 +222,10 @@ function LeaveReviewForm() {
       />
       <Button
         type="submit"
-        disabled={!stars || !name.trim() || !text.trim()}
+        disabled={!stars || !name.trim() || !text.trim() || loading}
         className="w-full bg-[#E67E22] hover:bg-[#d97218] text-white"
       >
-        Отправить отзыв
+        {loading ? 'Отправляем...' : 'Отправить отзыв'}
       </Button>
     </form>
   );
@@ -326,10 +337,26 @@ const Index = () => {
     },
   ];
 
+  const staticReviews = [
+    { company: 'СтройИнвест', author: 'Александр Петров', role: 'Директор', text: 'Работаем с ВИС уже 5 лет. Стабильные поставки, адекватные цены и всегда в наличии нужный ассортимент.', stars: 5 },
+    { company: 'ДВ-Строй', author: 'Марина Ким', role: 'Начальник снабжения', text: 'Отличная логистика и оперативность. Материалы приходят точно в срок, качество подтверждено сертификатами.', stars: 5 },
+    { company: 'ПримСтрой', author: 'Олег Волков', role: 'Прораб', text: 'Газобетон от ВИС — идеальная геометрия блоков. Кладка идёт быстро, расход клея минимальный.', stars: 5 },
+  ];
+
+  const [dbReviews, setDbReviews] = useState<{ id: number; author: string; company: string; role: string; text: string; stars: number }[]>([]);
+
+  const loadReviews = () => {
+    fetch(REVIEWS_URL)
+      .then((r) => r.json())
+      .then((data) => setDbReviews(data.reviews || []))
+      .catch(() => {});
+  };
+
+  useEffect(() => { loadReviews(); }, []);
+
   const reviews = [
-    { company: 'СтройИнвест', author: 'Александр Петров', role: 'Директор', text: 'Работаем с ВИС уже 5 лет. Стабильные поставки, адекватные цены и всегда в наличии нужный ассортимент.' },
-    { company: 'ДВ-Строй', author: 'Марина Ким', role: 'Начальник снабжения', text: 'Отличная логистика и оперативность. Материалы приходят точно в срок, качество подтверждено сертификатами.' },
-    { company: 'ПримСтрой', author: 'Олег Волков', role: 'Прораб', text: 'Газобетон от ВИС — идеальная геометрия блоков. Кладка идёт быстро, расход клея минимальный.' },
+    ...dbReviews.map((r) => ({ company: r.company, author: r.author, role: r.role, text: r.text, stars: r.stars })),
+    ...staticReviews,
   ];
 
   return (
@@ -719,7 +746,7 @@ const Index = () => {
             <div className="bg-[#F8F8F8] rounded-2xl p-6 border border-[#1E3A5F]/10">
               <h3 className="text-lg font-bold text-[#1E3A5F] mb-1" style={{ fontFamily: 'Montserrat' }}>Оставить отзыв</h3>
               <p className="text-sm text-[#333]/50 mb-4">Поделитесь своим опытом работы с нами</p>
-              <LeaveReviewForm />
+              <LeaveReviewForm onSubmitted={loadReviews} />
             </div>
           </div>
         </div>

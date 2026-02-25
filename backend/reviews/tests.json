@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "name": "GET reviews",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "POST review",
+      "method": "POST",
+      "path": "/",
+      "body": {"author": "Тест Тестов", "text": "Отличная компания!", "stars": 5},
+      "expectedStatus": 200
+    }
+  ]
+}
