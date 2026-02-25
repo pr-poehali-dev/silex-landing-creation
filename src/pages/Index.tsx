@@ -359,13 +359,13 @@ const Index = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 text-left text-white pt-0 pb-32">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 animate-fade-in" style={{ fontFamily: 'Montserrat' }}>
-            <span className="animate-gradient-text">Автоклавный газобетон.</span>
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 text-center text-white pt-0 pb-32">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-fade-in" style={{ fontFamily: 'Montserrat' }}>
+            Автоклавный газобетон.
             <br />
-            <span className="animate-gradient-text">Дом, который дышит и греет</span>
+            <span className="text-[#E67E22]">Дом, который дышит и греет</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/85 max-w-3xl mb-8 animate-fade-in-delay-1">
+          <p className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto mb-8 animate-fade-in-delay-1">
             Гарантия качества в каждом блоке
           </p>
 

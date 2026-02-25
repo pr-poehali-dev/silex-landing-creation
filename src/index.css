@@ -4,27 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient-text {
-  background: linear-gradient(90deg, #ffffff, #e67e22, #f5c07a, #ffffff);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 4s ease infinite;
-}
-
 @keyframes ripple {
   to {
     transform: scale(4);
