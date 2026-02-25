@@ -106,9 +106,6 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
         >
           <div className="flip-card-front bg-white shadow-lg">
             <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
-            <div className="absolute top-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-3">
-              <h3 className="text-black font-bold text-lg text-center">{frontTitle}</h3>
-            </div>
           </div>
           <div
             className="flip-card-back shadow-lg overflow-hidden"
@@ -308,29 +305,29 @@ const Index = () => {
 
   const projects = [
     {
-      frontImage: PROJECT_IMG,
-      frontTitle: 'ЖК «Гавань Резиденс»',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/2b316a9f-dd27-4186-80d5-f14031da1d9d.jpeg',
+      frontTitle: 'Объект 1',
       backTitle: 'ЖК «Гавань Резиденс»',
       backDescription: 'Поставка газобетона, утеплителей и сухих смесей для жилого комплекса на 450 квартир.',
       backImage: HERO_IMG,
     },
     {
-      frontImage: HERO_IMG,
-      frontTitle: 'Магазин «Парус»',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/51d898ff-06ce-4700-80cc-971341176291.jpeg',
+      frontTitle: 'Объект 2',
       backTitle: 'ТЦ «Парус»',
       backDescription: 'Полное снабжение строительными материалами торгового центра площадью 12 000 м².',
       backImage: PROJECT_IMG,
     },
     {
-      frontImage: BLOCKS_IMG,
-      frontTitle: 'Складской комплекс',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/a7bd0a15-d930-46e9-81fa-117f19da3fc3.jpeg',
+      frontTitle: 'Объект 3',
       backTitle: 'Логистический центр',
       backDescription: 'Газобетон и металлоконструкции для складского комплекса класса А.',
       backImage: WAREHOUSE_IMG,
     },
     {
-      frontImage: WAREHOUSE_IMG,
-      frontTitle: 'Коттеджный посёлок',
+      frontImage: 'https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/44db49fc-c19d-461d-b8ba-f5f7fcc3a263.jpeg',
+      frontTitle: 'Объект 4',
       backTitle: 'КП «Новый берег»',
       backDescription: 'Поставка стеновых материалов и кровли для 80 индивидуальных домов.',
       backImage: BLOCKS_IMG,
