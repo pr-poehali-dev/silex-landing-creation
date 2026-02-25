@@ -359,7 +359,7 @@ const Index = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 text-center text-white" style={{ paddingTop: '280px', paddingBottom: '80px' }}>
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 text-center text-white" style={{ paddingTop: '580px', paddingBottom: '80px' }}>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-fade-in" style={{ fontFamily: 'Montserrat' }}>
             Автоклавный газобетон.
             <br />
