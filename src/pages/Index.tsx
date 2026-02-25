@@ -692,7 +692,6 @@ const Index = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-[#333] text-sm">{rev.author}</div>
-                      <div className="text-xs text-[#333]/50">{rev.role}, {rev.company}</div>
                     </div>
                   </div>
                 </CardContent>
