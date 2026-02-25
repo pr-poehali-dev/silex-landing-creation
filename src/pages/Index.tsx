@@ -735,8 +735,12 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#E67E22] text-[#E67E22] font-semibold hover:bg-[#E67E22] hover:text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
               >
-                <Icon name="MapPin" size={18} />
-                Читать отзывы на 2ГИС
+                Читать отзывы на
+                <img
+                  src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/370186b7-a7aa-4b7a-bf11-24700d0b1526.png"
+                  alt="2ГИС"
+                  className="h-6 w-auto object-contain"
+                />
               </a>
             </div>
           </div>
