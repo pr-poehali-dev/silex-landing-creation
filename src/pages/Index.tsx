@@ -71,24 +71,26 @@ function AnimatedCounter({ end, suffix = '', duration = 2000 }: { end: number; s
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
-function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImage, noBlur }: {
+function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImage, noBlur, clickable }: {
   frontImage: string;
   frontTitle: string;
   backTitle: string;
   backDescription: string;
   backImage?: string;
   noBlur?: boolean;
+  clickable?: boolean;
 }) {
   const [flipped, setFlipped] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const isImageBack = backImage && !backTitle;
+  const canOpenModal = isImageBack || (clickable && backImage);
 
   const handleMouseLeaveCard = () => {
     if (!modalOpen) setFlipped(false);
   };
 
   const handleBackClick = () => {
-    if (isImageBack) setModalOpen(true);
+    if (canOpenModal) setModalOpen(true);
   };
 
   return (
@@ -109,7 +111,8 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
             <img src={frontImage} alt={frontTitle} className="w-full h-full object-cover" />
           </div>
           <div
-            className="flip-card-back shadow-lg overflow-hidden relative"
+            className={`flip-card-back shadow-lg overflow-hidden relative${canOpenModal ? ' cursor-zoom-in' : ''}`}
+            onClick={handleBackClick}
           >
             <img src={backImage || frontImage} alt={backTitle} className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: 'rgba(30,58,95,0.72)', backdropFilter: noBlur ? undefined : 'blur(6px)' }} />
@@ -121,7 +124,7 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
         </div>
       </div>
 
-      {modalOpen && isImageBack && createPortal(
+      {modalOpen && canOpenModal && createPortal(
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => { setModalOpen(false); setFlipped(false); }}>
           <div className="relative" onClick={(e) => e.stopPropagation()}>
             <img
@@ -493,7 +496,7 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {categories.map((cat, i) => (
               <div key={i} className="scroll-animate" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <FlipCard {...cat} noBlur />
+                <FlipCard {...cat} noBlur clickable />
               </div>
             ))}
           </div>
