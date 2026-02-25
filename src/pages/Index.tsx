@@ -613,18 +613,19 @@ const Index = () => {
             <div className="flex flex-col items-center gap-6">
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="reviews-widget-card bg-gradient-to-br from-[#fff7ed] to-[#fff] border border-[#E67E22]/20 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-md">
-                  <div className="text-4xl font-extrabold text-[#E67E22] leading-none">4.9</div>
+                  <div className="text-4xl font-extrabold text-[#E67E22] leading-none">4.7</div>
                   <div>
                     <div className="flex gap-0.5 mb-1">
-                      {[1,2,3,4,5].map((s) => (
+                      {[1,2,3,4].map((s) => (
                         <Icon key={s} name="Star" size={18} className="text-[#E67E22] fill-[#E67E22]" />
                       ))}
+                      <Icon name="StarHalf" size={18} className="text-[#E67E22] fill-[#E67E22]" />
                     </div>
-                    <div className="text-xs text-[#333]/60 font-medium">Рейтинг на Яндекс Картах</div>
+                    <div className="text-xs text-[#333]/60 font-medium">Рейтинг на 2ГИС</div>
                   </div>
                 </div>
                 <div className="reviews-widget-card bg-gradient-to-br from-[#eef6ff] to-[#fff] border border-[#1E3A5F]/15 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-md">
-                  <div className="text-4xl font-extrabold text-[#1E3A5F] leading-none">200+</div>
+                  <div className="text-4xl font-extrabold text-[#1E3A5F] leading-none">12</div>
                   <div>
                     <div className="text-sm font-semibold text-[#1E3A5F]">отзывов</div>
                     <div className="text-xs text-[#333]/60 font-medium">от реальных клиентов</div>
@@ -639,13 +640,13 @@ const Index = () => {
                 </div>
               </div>
               <a
-                href="https://yandex.ru/maps/-/CPafM8JG"
+                href="https://go.2gis.com/JQ16X"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-[#E67E22] text-[#E67E22] font-semibold hover:bg-[#E67E22] hover:text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
               >
                 <Icon name="MapPin" size={18} />
-                Читать отзывы на Яндекс Картах
+                Читать отзывы на 2ГИС
               </a>
             </div>
           </div>
