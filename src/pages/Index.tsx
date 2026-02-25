@@ -278,7 +278,8 @@ const Index = () => {
             <img
               src="https://cdn.poehali.dev/projects/53d4eefc-24fa-41e9-b99a-3ee269a34aaf/bucket/b7e4dd2d-de05-4a2e-b0d5-bcf1064e0acc.png"
               alt="ВИС"
-              className="h-12 md:h-14 w-auto"
+              className="h-12 md:h-14 w-auto cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />
           </div>
 
