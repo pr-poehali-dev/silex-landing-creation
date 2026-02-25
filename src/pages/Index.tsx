@@ -443,7 +443,7 @@ const Index = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 text-center text-white pt-[130px] md:pt-[300px] pb-20">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-8 text-center text-white md:pt-[300px] py-[205px]">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-fade-in" style={{ fontFamily: 'Montserrat' }}>
             Автоклавный газобетон.
             <br />
