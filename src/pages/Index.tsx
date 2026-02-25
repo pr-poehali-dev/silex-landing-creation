@@ -223,10 +223,10 @@ const Index = () => {
   ];
 
   const services = [
-    { icon: '🚂', title: 'Ж/Д тупик', description: 'Собственный железнодорожный тупик для приёмки вагонов с материалами' },
-    { icon: '🚛', title: 'Доставка', description: 'Доставка по Приморскому краю и Дальнему Востоку' },
-    { icon: '🧮', title: 'Расчёт материалов', description: 'Бесплатный выезд на замеры и помощь в расчёте необходимого количества материалов' },
-    { icon: '🔄', title: 'Бесперебойная поставка', description: 'Стабильные поставки на объект по согласованному графику' },
+    { icon: 'Train', title: 'Ж/Д тупик', description: 'Собственный железнодорожный тупик для приёмки вагонов с материалами' },
+    { icon: 'Truck', title: 'Доставка', description: 'Доставка по Приморскому краю и Дальнему Востоку' },
+    { icon: 'Calculator', title: 'Расчёт материалов', description: 'Бесплатный выезд на замеры и помощь в расчёте необходимого количества материалов' },
+    { icon: 'RefreshCw', title: 'Бесперебойная поставка', description: 'Стабильные поставки на объект по согласованному графику' },
   ];
 
   const projects = [
@@ -541,7 +541,7 @@ const Index = () => {
               >
                 <div className="w-14 h-14 rounded-xl relative flex items-center justify-center mb-5 overflow-hidden bg-[#E67E22]/20">
                   <div className="absolute bottom-0 left-0 right-0 h-0 bg-[#E67E22] transition-all duration-500 ease-out group-hover:h-full" />
-                  <span className="text-3xl relative z-10 select-none">{srv.icon}</span>
+                  <Icon name={srv.icon} size={26} className="text-[#E67E22] group-hover:text-white transition-colors duration-300 relative z-10" />
                 </div>
                 <h3 className="text-white font-bold text-lg mb-2">{srv.title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{srv.description}</p>
