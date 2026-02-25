@@ -71,12 +71,13 @@ function AnimatedCounter({ end, suffix = '', duration = 2000 }: { end: number; s
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
-function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImage }: {
+function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImage, noBlur }: {
   frontImage: string;
   frontTitle: string;
   backTitle: string;
   backDescription: string;
   backImage?: string;
+  noBlur?: boolean;
 }) {
   const [flipped, setFlipped] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -111,7 +112,7 @@ function FlipCard({ frontImage, frontTitle, backTitle, backDescription, backImag
             className="flip-card-back shadow-lg overflow-hidden relative"
           >
             <img src={backImage || frontImage} alt={backTitle} className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0" style={{ background: 'rgba(30,58,95,0.72)', backdropFilter: 'blur(6px)' }} />
+            <div className="absolute inset-0" style={{ background: 'rgba(30,58,95,0.72)', backdropFilter: noBlur ? undefined : 'blur(6px)' }} />
             <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 text-white text-center">
               <h3 className="font-bold text-xl mb-3">{backTitle}</h3>
               <p className="text-white/85 text-sm leading-relaxed">{backDescription}</p>
@@ -492,7 +493,7 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {categories.map((cat, i) => (
               <div key={i} className="scroll-animate" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <FlipCard {...cat} />
+                <FlipCard {...cat} noBlur />
               </div>
             ))}
           </div>
